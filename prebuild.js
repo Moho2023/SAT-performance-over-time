@@ -1,3 +1,6 @@
+/**
+//DO NOT USE YET
+
 const fs = require("fs");
 
 const directory = "./public/";
@@ -26,3 +29,5 @@ fs.readdir(current_paths, (err, files) => {
         });
     }
 });
+
+*/
