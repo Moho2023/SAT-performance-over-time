@@ -1,9 +1,9 @@
-/**
+
 //DO NOT USE YET
 
 const fs = require("fs");
 
-const directory = "./public/";
+/** const directory = "./public/";
 
 fs.readdir(directory, (err, files) => {
   if (err) throw err;
@@ -13,11 +13,11 @@ fs.readdir(directory, (err, files) => {
       if (err) throw err;
     });
   }
-});
+});*/
 
 
 
-let current_paths = "./src/";
+let current_paths = "./src/static/";
 let new_paths = "./public/";
 
 fs.readdir(current_paths, (err, files) => {
@@ -29,5 +29,3 @@ fs.readdir(current_paths, (err, files) => {
         });
     }
 });
-
-*/
