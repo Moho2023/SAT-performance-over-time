@@ -1,31 +1,27 @@
-
-//DO NOT USE YET
-
 const fs = require("fs");
 
-/** const directory = "./public/";
-
-fs.readdir(directory, (err, files) => {
-  if (err) throw err;
-
-  for (let file of files) {
-    fs.unlink(directory + file, (err) => {
-      if (err) throw err;
-    });
-  }
-});*/
-
-
-
-let current_paths = "./src/static/";
-let new_paths = "./public/";
-
-fs.readdir(current_paths, (err, files) => {
+function deleteFile(dir_path, file){
+  fs.unlink(dir_path + file, (err) => {
     if (err) throw err;
+  });
+}
+//move a copy of a file
+function moveFile(old_path, new_path, fileName){
+  let fileData = fs.readFileSync(old_path + fileName);
+  fs.writeFileSync(new_path+fileName, fileData);
+}
 
+//delete from public
+fs.readdir('./public/', (err, files) => {
+    if (err) throw err;
     for(let file of files){
-        fs.rename(current_paths + file, new_paths + file, (err) => {
-            if (err) throw err;
-        });
+        deleteFile('./public/', file);
     }
 });
+
+fs.readdir('./src/static/', (err, files) => {
+  if (err) throw err;
+  for(let file of files){
+    moveFile('./src/static/', './public/', file);
+  }
+})
