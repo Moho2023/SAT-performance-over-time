@@ -10,7 +10,7 @@ states.forEach((state) => {
   let currentState = state_data[0];
   let currentStateData = {};
 
-  if(currentState != "STATE"){
+  if(currentState != "STATE" && currentState != ""){
     currentStateData['2017'] = {};
     currentStateData['2018'] = {};
     currentStateData['2019'] = {};

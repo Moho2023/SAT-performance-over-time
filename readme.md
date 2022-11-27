@@ -2,6 +2,8 @@
 
 ## SAT data from: <https://nces.ed.gov/programs/digest/d20/tables/dt20_226.40.asp>
 
+## AlbersUSA Map Projection <https://github.com/hrbrmstr/albersusa>
+
 ## `npm install fs`
 
 ## `cd data`
