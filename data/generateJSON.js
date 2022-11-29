@@ -1,29 +1,43 @@
-const fs = require('fs');
+const fs = require("fs");
 
-let characters = {};
+let scoresJSON = {};
 
-let peeps_csv = fs.readFileSync('Characters.csv', 'utf8');
+let score_csv = fs.readFileSync('scores.csv', 'utf8');
+let states = score_csv.split("\n");
 
-let peeps = peeps_csv.split("\n");
+states.forEach((state) => {
+  let state_data = state.split(',');
+  let currentState = state_data[0];
+  let currentStateData = {};
 
-peeps.forEach(function(peep) {
-  let character_info = peep.split(';');
+  if(currentState != "STATE" && currentState != ""){
+    currentStateData['2017'] = {};
+    currentStateData['2018'] = {};
+    currentStateData['2019'] = {};
+    currentStateData['2020'] = {};
 
-  let character_name = character_info[1];
+    currentStateData['2017']['total'] = state_data[1];
+    currentStateData['2017']['r'] = state_data[2];
+    currentStateData['2017']['m'] = state_data[3];
+    currentStateData['2017']['pct'] = state_data[4];
 
-  if(character_name!="Name"){
-    let characterStats = {};
-    characterStats['gender'] = character_info[2];
-    characterStats['house'] = character_info[4];
-    characterStats['species'] = character_info[7];
-    if (character_info[12])
-      characterStats['skills'] = character_info[12].split('|');
-    else {
-      characterStats['skills'] = [];
-    }
+    currentStateData['2018']['total'] = state_data[5];
+    currentStateData['2018']['r'] = state_data[6];
+    currentStateData['2018']['m'] = state_data[7];
+    currentStateData['2018']['pct'] = state_data[8];
 
-    characters[character_name]=characterStats;
+    currentStateData['2019']['total'] = state_data[9];
+    currentStateData['2019']['r'] = state_data[10];
+    currentStateData['2019']['m'] = state_data[11];
+    currentStateData['2019']['pct'] = state_data[12];
+
+    currentStateData['2020']['total'] = state_data[13];
+    currentStateData['2020']['r'] = state_data[14];
+    currentStateData['2020']['m'] = state_data[15];
+    currentStateData['2020']['pct'] = state_data[16];
+
+    scoresJSON[currentState] = currentStateData;
   }
 });
 
-fs.writeFileSync('potter.json', JSON.stringify(characters), 'utf8');
+fs.writeFileSync('statescores.json', JSON.stringify(scoresJSON), 'utf8');
