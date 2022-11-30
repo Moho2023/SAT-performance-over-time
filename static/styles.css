@@ -8,3 +8,6 @@ body {
 .random {
 
 }
+table, td{
+  border: 1px solid black;
+}
