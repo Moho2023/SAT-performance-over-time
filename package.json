@@ -10,8 +10,8 @@
     "fs": "^0.0.1-security"
   },
   "scripts": {
-    "prebuild": "echo \"hi\" && exit 1",
-    "build": "echo \"build\" && exit 1",
+    "prebuild": "node prebuild.js",
+    "build": "cd src && node siteGenerator.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
