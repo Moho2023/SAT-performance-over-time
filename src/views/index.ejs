@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Broadband and Standardized Testing by State</title>
+  <title>Average Standardized Testing</title>
   <meta name="author" content="You">
   <meta name="description">
   <meta content="text/html" http-equiv="Content-type" />
@@ -22,19 +22,20 @@
     <table>
       <tr>
         <th>Year</th>
-        <th>Brodband Acess</th>
         <th>Average National SAT Score</th>
         <th>Average National Math Score</th>
         <th>Average National Reading Score</th>
 
       </tr>
       <tr>
-        <th>State</th>
-        <th>Brodband Acess</th>
-        <th>SAT Score</th>
-        <th>ACT Score</th>
+        <th>Year</th>
+        <th>Average National SAT Score</th>
+        <th>Average National Math Score</th>
+        <th>Average National Reading Score</th>
       </tr>
-    </table>
+    </table>    
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
   <script>
   var data = [{
     type: "choroplethmapbox", locations: ["NY", "MA", "VT","TX","VA"], z: [1050, 1000, 1020,1400,1029],
@@ -51,7 +52,9 @@
   </script>
   </section>
 
-	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+  <a href="./about.html">About Our Project!</a>
+
+
 
 </body>
 
