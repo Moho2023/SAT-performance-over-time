@@ -34,6 +34,7 @@ let index_html = ejs.render(index_template, {
 
 let macro_html = ejs.render(macro_template, {
   filename: __dirname + '/views/index.ejs',
+  statedata: "../data/statescores.json"
 });
 let about_html = ejs.render(about_template);
 
