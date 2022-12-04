@@ -4,9 +4,9 @@ const ejs = require('ejs');
 //let character_info = JSON.parse(fs.readFileSync('../data/potter.json', 'utf8'));
 //let index_template = fs.readFileSync('views/index.ejs', 'utf8');
 //let character_template = fs.readFileSync('views/character.ejs', 'utf8');
-let macro_template = fs.readFileSync('views/index.ejs', 'utf8');
 let about_template = fs.readFileSync('views/about.ejs', 'utf8');
-
+let statesdata = JSON.parse(fs.readFileSync('../data/statescores.json', 'utf8'));
+let index_template = fs.readFileSync('views/index.ejs', 'utf8');
 /*
   1) Generate a web page for each character
   2) Keep track of the link for index.html
@@ -32,14 +32,18 @@ let index_html = ejs.render(index_template, {
 
 //fs.writeFileSync('../src/static/index.html', index_html, 'utf8');
 
-let macro_html = ejs.render(macro_template, {
-  filename: __dirname + '/views/index.ejs',
-  statedata: "../data/statescores.json"
+let about_html = ejs.render(about_template, {
+  filename: __dirname + '/views/about.ejs',
+  statesdata: statesdata
 });
-let about_html = ejs.render(about_template);
 
-fs.writeFileSync('../public/index.html', macro_html, 'utf8');
+let index_html = ejs.render(index_template, {
+  filename: __dirname + '/views/index.ejs',
+  statesdata: statesdata
+});
+
 fs.writeFileSync('../public/about.html', about_html, 'utf8');
+fs.writeFileSync('../public/index.html', index_html, 'utf8');
 
 
 function getBetterFileName(characterName){

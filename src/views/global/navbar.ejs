@@ -17,9 +17,9 @@
             By State
           </a>
           <ul class="dropdown-menu">
-            <% states.forEach(function(state){ %>
-            <%- include('./dropdown-item', {state: state}); %>
-            <% }); %>
+            <% for(let state in statesdata){%>
+             <li><a class="dropdown-item" href="<%=statesdata[state].statelink%>"> <%=state%> </a></li>
+            <%}%>
           </ul>
         </li>
       </ul>

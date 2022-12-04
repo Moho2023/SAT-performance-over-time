@@ -32,7 +32,8 @@ states.forEach((state) => {
     currentStateData['2020r'] = state_data[14];
     currentStateData['2020m'] = state_data[15];
     currentStateData['2020pct'] = state_data[16];
-    currentStateData['Acronym'] = state_data[17];
+    currentStateData['acronym'] = state_data[17];
+    currentStateData['statelink'] = state_data[17]+".html";
 
     scoresJSON[currentState] = currentStateData;
   }
