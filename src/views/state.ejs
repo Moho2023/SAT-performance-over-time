@@ -21,52 +21,51 @@
 
 <center><h1><%=thisstate%></h1></center>
 
-<div id="statetotals"></div>
-<div id="statesections"></div>
-<div id="statepercents"></div>
+<div id="state_graph"></div>
 
 <script>
 let totalsarray = [<%=statesdata[thisstate].total2017%>,<%=statesdata[thisstate].total2018%>,<%=statesdata[thisstate].total2019%>,<%=statesdata[thisstate].total2020%>];
 let math = [<%=statesdata[thisstate].m2017%>,<%=statesdata[thisstate].m2018%>,<%=statesdata[thisstate].m2019%>,<%=statesdata[thisstate].m2020%>];
 let reading = [<%=statesdata[thisstate].r2017%>,<%=statesdata[thisstate].r2018%>,<%=statesdata[thisstate].r2019%>,<%=statesdata[thisstate].r2020%>];
 let pctarray = [<%=statesdata[thisstate].pct2017%>,<%=statesdata[thisstate].pct2018%>,<%=statesdata[thisstate].pct2019%>,<%=statesdata[thisstate].pct2020%>];
-
+console.log(totalsarray)
+console.log(math)
+console.log(reading)
+console.log(pctarray)
 
 var totals = {
 x: ['2017', '2018', '2019', '2020'],
 y: totalsarray,
-mode: 'lines+markers',
+type: 'bar',
 name: 'Average Total'
 };
 
 var m = {
-x: [2017, 2018, 2019, 2020],
+x: ['2017', '2018', '2019', '2020'],
 y: math,
-mode: 'lines+markers',
+type: 'bar',
 name: 'Average Math'
 };
 
 var r = {
-x: [2017, 2018, 2019, 2020],
+x: ['2017', '2018', '2019', '2020'],
 y: reading,
-mode: 'lines+markers',
+type: 'bar',
 name: 'Average EBRW'
 };
 
 var pct = {
-x: [2017, 2018, 2019, 2020],
+x: ['2017', '2018', '2019', '2020'],
 y: pctarray,
-mode: 'lines+markers',
-name: 'Percent Taking SAT'
+type: 'bar',
+name: 'PCT Taking SAT'
 };
 
-var datatotals = totals;
+var data = [totals, m, r, pct];
 
-var layouttotals = {
-title:'Average Total Score'
-};
+var layout = {barmode: 'group'};
 
-Plotly.newPlot('statetotals', datatotals, layouttotals);
+Plotly.newPlot('state_graph', data, layout);
 </script>
 
 

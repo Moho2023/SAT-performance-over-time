@@ -147,52 +147,51 @@
 
 <center><h1>Idaho</h1></center>
 
-<div id="statetotals"></div>
-<div id="statesections"></div>
-<div id="statepercents"></div>
+<div id="state_graph"></div>
 
 <script>
 let totalsarray = [1005,1001,993,984];
 let math = [493,493,488,484];
 let reading = [513,508,505,500];
 let pctarray = [93,100,100,100];
-
+console.log(totalsarray)
+console.log(math)
+console.log(reading)
+console.log(pctarray)
 
 var totals = {
 x: ['2017', '2018', '2019', '2020'],
 y: totalsarray,
-mode: 'lines+markers',
+type: 'bar',
 name: 'Average Total'
 };
 
 var m = {
-x: [2017, 2018, 2019, 2020],
+x: ['2017', '2018', '2019', '2020'],
 y: math,
-mode: 'lines+markers',
-name: 'Average Math'
+type: 'bar',
+name: 'Average Total'
 };
 
 var r = {
-x: [2017, 2018, 2019, 2020],
+x: ['2017', '2018', '2019', '2020'],
 y: reading,
-mode: 'lines+markers',
-name: 'Average EBRW'
+type: 'bar',
+name: 'Average Total'
 };
 
 var pct = {
-x: [2017, 2018, 2019, 2020],
+x: ['2017', '2018', '2019', '2020'],
 y: pctarray,
-mode: 'lines+markers',
-name: 'Percent Taking SAT'
+type: 'bar',
+name: 'Average Total'
 };
 
-var datatotals = totals;
+var data = [totals, m, r, pct];
 
-var layouttotals = {
-title:'Average Total Score'
-};
+var layout = {barmode: 'group'};
 
-Plotly.newPlot('statetotals', datatotals, layouttotals);
+Plotly.newPlot('state_graph', data, layout);
 </script>
 
 
