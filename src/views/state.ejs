@@ -21,6 +21,21 @@
   <%- include('global/header') %>
 <center><h2><%=thisstate%></h2></center>
 
+<h4>Some quick facts:</h4>
+<ul>
+  <li>The most recent average composite score for the state of <%=thisstate%> was in 2020 and it was a <%=statesdata[thisstate].total2020%></li>
+  <li>This composite score was composed of <%=statesdata[thisstate].r2020%> in the EBRW section and <%=statesdata[thisstate].m2020%> in the math section</li>
+  <li>The national average in 2020 was <%=statesdata["United States"].total2020%></li>
+  <% let nationalaverage = statesdata["United States"].total2020 %>
+  <% let stateaverage = statesdata[thisstate].total2020 %>
+  <% if(stateaverage < nationalaverage){ %>
+    <li>The composite average score in <%=thisstate%> is lower than the national average</li>
+  <% } else { %>
+    <li>The composite average score in <%=thisstate%> is at or higher than the national average</li>
+    <% } %>
+    <li>The percentage of high school students in <%=thisstate%> taking the SAT in 2020 was <%=statesdata[thisstate].pct2020%>% while the national participation was <%=statesdata["United States"].pct2020%>%</li>
+</ul>
+
 <div id="state_graph1"></div>
 <div id="state_graph2"></div>
 
