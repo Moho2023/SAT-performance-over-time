@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">SAT Scores Distributions</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,6 +137,8 @@
             
              <li><a class="dropdown-item" href="WY.html"> Wyoming </a></li>
             
+             <li><a class="dropdown-item" href="US.html"> United States </a></li>
+            
           </ul>
         </li>
       </ul>
@@ -144,10 +146,12 @@
   </div>
 </nav>
 
+  <center><h1>Average SAT Scores and Percentages of SAT Test Takers by State</h1></center>
 
-<center><h1>Mississippi</h1></center>
+<center><h2>Mississippi</h2></center>
 
-<div id="state_graph"></div>
+<div id="state_graph1"></div>
+<div id="state_graph2"></div>
 
 <script>
 let totalsarray = [1242,1236,1237,1203];
@@ -170,28 +174,31 @@ var m = {
 x: ['2017', '2018', '2019', '2020'],
 y: math,
 type: 'bar',
-name: 'Average Total'
+name: 'Average Math'
 };
 
 var r = {
 x: ['2017', '2018', '2019', '2020'],
 y: reading,
 type: 'bar',
-name: 'Average Total'
+name: 'Average EBRW'
 };
 
 var pct = {
-x: ['2017', '2018', '2019', '2020'],
+x: ['2017 Percentage', '2018 Percentage', '2019 Percentage', '2020 Percentage'],
 y: pctarray,
 type: 'bar',
-name: 'Average Total'
+name: 'PCT Taking SAT'
 };
 
-var data = [totals, m, r, pct];
+var data1 = [totals, m, r];
+var data2 = [pct];
 
-var layout = {barmode: 'group'};
+var layout1 = {barmode: 'group'};
 
-Plotly.newPlot('state_graph', data, layout);
+Plotly.newPlot('state_graph1', data1, layout1);
+Plotly.newPlot('state_graph2', data2);
+
 </script>
 
 

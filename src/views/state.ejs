@@ -18,10 +18,11 @@
 
 <body>
   <%- include('global/navbar', {statesdata: statesdata}) %>
+  <%- include('global/header') %>
+<center><h2><%=thisstate%></h2></center>
 
-<center><h1><%=thisstate%></h1></center>
-
-<div id="state_graph"></div>
+<div id="state_graph1"></div>
+<div id="state_graph2"></div>
 
 <script>
 let totalsarray = [<%=statesdata[thisstate].total2017%>,<%=statesdata[thisstate].total2018%>,<%=statesdata[thisstate].total2019%>,<%=statesdata[thisstate].total2020%>];
@@ -55,17 +56,20 @@ name: 'Average EBRW'
 };
 
 var pct = {
-x: ['2017', '2018', '2019', '2020'],
+x: ['2017 Percentage', '2018 Percentage', '2019 Percentage', '2020 Percentage'],
 y: pctarray,
 type: 'bar',
 name: 'PCT Taking SAT'
 };
 
-var data = [totals, m, r, pct];
+var data1 = [totals, m, r];
+var data2 = [pct];
 
-var layout = {barmode: 'group'};
+var layout1 = {barmode: 'group'};
 
-Plotly.newPlot('state_graph', data, layout);
+Plotly.newPlot('state_graph1', data1, layout1);
+Plotly.newPlot('state_graph2', data2);
+
 </script>
 
 

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">SAT Scores Distributions</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,6 +137,8 @@
             
              <li><a class="dropdown-item" href="WY.html"> Wyoming </a></li>
             
+             <li><a class="dropdown-item" href="US.html"> United States </a></li>
+            
           </ul>
         </li>
       </ul>
@@ -144,56 +146,30 @@
   </div>
 </nav>
 
-  <header>
-    <h1>Average Standardized Testing Scores</h1>
-  </header>
-    <table>
-      <tr>
-        <th>Year</th>
-        <th>Average National SAT Score</th>
-        <th>Average National Math Score</th>
-        <th>Average National Reading Score</th>
+  <center><h1>Average SAT Scores and Percentages of SAT Test Takers by State</h1></center>
 
-      </tr>
-      <tr>
-        <th>Year</th>
-        <th>Average National SAT Score</th>
-        <th>Average National Math Score</th>
-        <th>Average National Reading Score</th>
-      </tr>
-      <tr>
-        <th>Year</th>
-        <th>Average National SAT Score</th>
-        <th>Average National Math Score</th>
-        <th>Average National Reading Score</th>
-      </tr>
-      <tr>
-        <th>Year</th>
-        <th>Average National SAT Score</th>
-        <th>Average National Math Score</th>
-        <th>Average National Reading Score</th>
-      </tr>
-      <tr>
-        <th>Year</th>
-        <th>Average National SAT Score</th>
-        <th>Average National Math Score</th>
-        <th>Average National Reading Score</th>
-      </tr>
-    </table>
+
+  <center>
+    <h3>Average Standardized Testing Scores Map of the United States</h3>
+  </center>
 
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class ="d-flex justify-content-center" id="USmap2020"></div>
+      <div class ="d-flex justify-content-center" id="pctmap2020"></div>
     </div>
     <div class="carousel-item active">
       <div class ="d-flex justify-content-center" id="USmap2019"></div>
+      <div class ="d-flex justify-content-center" id="pctmap2019"></div>
     </div>
     <div class="carousel-item active">
       <div class ="d-flex justify-content-center" id="USmap2018"></div>
+      <div class ="d-flex justify-content-center" id="pctmap2018"></div>
     </div>
     <div class="carousel-item active">
       <div class ="d-flex justify-content-center" id="USmap2017"></div>
+      <div class ="d-flex justify-content-center" id="pctmap2017"></div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -512,6 +488,274 @@
     t2018.push(1257);
     t2017.push(1230);
   
+    acronyms.push("US");
+    t2020.push(1051);
+    t2019.push(1059);
+    t2018.push(1068);
+    t2017.push(1060);
+  
+
+  let pct2020 = [];
+  let pct2019 = [];
+  let pct2018 = [];
+  let pct2017 = [];
+
+  
+    pct2020.push(7);
+    pct2019.push(7);
+    pct2018.push(6);
+    pct2017.push(5);
+  
+    pct2020.push(37);
+    pct2019.push(41);
+    pct2018.push(43);
+    pct2017.push(38);
+  
+    pct2020.push(29);
+    pct2019.push(31);
+    pct2018.push(29);
+    pct2017.push(30);
+  
+    pct2020.push(4);
+    pct2019.push(6);
+    pct2018.push(5);
+    pct2017.push(3);
+  
+    pct2020.push(67);
+    pct2019.push(63);
+    pct2018.push(60);
+    pct2017.push(53);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(100);
+    pct2017.push(11);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(100);
+    pct2017.push(100);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(100);
+    pct2017.push(100);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(97);
+    pct2017.push(83);
+  
+    pct2020.push(68);
+    pct2019.push(71);
+    pct2018.push(70);
+    pct2017.push(61);
+  
+    pct2020.push(51);
+    pct2019.push(54);
+    pct2018.push(56);
+    pct2017.push(55);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(100);
+    pct2017.push(93);
+  
+    pct2020.push(98);
+    pct2019.push(100);
+    pct2018.push(99);
+    pct2017.push(9);
+  
+    pct2020.push(64);
+    pct2019.push(66);
+    pct2018.push(67);
+    pct2017.push(63);
+  
+    pct2020.push(3);
+    pct2019.push(3);
+    pct2018.push(3);
+    pct2017.push(2);
+  
+    pct2020.push(4);
+    pct2019.push(4);
+    pct2018.push(4);
+    pct2017.push(4);
+  
+    pct2020.push(4);
+    pct2019.push(4);
+    pct2018.push(4);
+    pct2017.push(4);
+  
+    pct2020.push(5);
+    pct2019.push(5);
+    pct2018.push(4);
+    pct2017.push(4);
+  
+    pct2020.push(98);
+    pct2019.push(99);
+    pct2018.push(99);
+    pct2017.push(95);
+  
+    pct2020.push(88);
+    pct2019.push(82);
+    pct2018.push(76);
+    pct2017.push(69);
+  
+    pct2020.push(80);
+    pct2019.push(81);
+    pct2018.push(80);
+    pct2017.push(76);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(100);
+    pct2017.push(100);
+  
+    pct2020.push(4);
+    pct2019.push(4);
+    pct2018.push(4);
+    pct2017.push(3);
+  
+    pct2020.push(3);
+    pct2019.push(3);
+    pct2018.push(3);
+    pct2017.push(2);
+  
+    pct2020.push(4);
+    pct2019.push(4);
+    pct2018.push(4);
+    pct2017.push(3);
+  
+    pct2020.push(10);
+    pct2019.push(9);
+    pct2018.push(10);
+    pct2017.push(10);
+  
+    pct2020.push(3);
+    pct2019.push(3);
+    pct2018.push(3);
+    pct2017.push(3);
+  
+    pct2020.push(17);
+    pct2019.push(20);
+    pct2018.push(23);
+    pct2017.push(26);
+  
+    pct2020.push(93);
+    pct2019.push(95);
+    pct2018.push(96);
+    pct2017.push(96);
+  
+    pct2020.push(82);
+    pct2019.push(82);
+    pct2018.push(82);
+    pct2017.push(70);
+  
+    pct2020.push(19);
+    pct2019.push(18);
+    pct2018.push(16);
+    pct2017.push(11);
+  
+    pct2020.push(79);
+    pct2019.push(79);
+    pct2018.push(79);
+    pct2017.push(67);
+  
+    pct2020.push(48);
+    pct2019.push(51);
+    pct2018.push(52);
+    pct2017.push(49);
+  
+    pct2020.push(2);
+    pct2019.push(2);
+    pct2018.push(2);
+    pct2017.push(2);
+  
+    pct2020.push(21);
+    pct2019.push(19);
+    pct2018.push(18);
+    pct2017.push(12);
+  
+    pct2020.push(20);
+    pct2019.push(22);
+    pct2018.push(8);
+    pct2017.push(7);
+  
+    pct2020.push(51);
+    pct2019.push(51);
+    pct2018.push(48);
+    pct2017.push(43);
+  
+    pct2020.push(67);
+    pct2019.push(70);
+    pct2018.push(70);
+    pct2017.push(65);
+  
+    pct2020.push(100);
+    pct2019.push(100);
+    pct2018.push(97);
+    pct2017.push(71);
+  
+    pct2020.push(68);
+    pct2019.push(68);
+    pct2018.push(55);
+    pct2017.push(50);
+  
+    pct2020.push(3);
+    pct2019.push(3);
+    pct2018.push(3);
+    pct2017.push(3);
+  
+    pct2020.push(7);
+    pct2019.push(7);
+    pct2018.push(6);
+    pct2017.push(5);
+  
+    pct2020.push(73);
+    pct2019.push(68);
+    pct2018.push(66);
+    pct2017.push(62);
+  
+    pct2020.push(3);
+    pct2019.push(4);
+    pct2018.push(4);
+    pct2017.push(3);
+  
+    pct2020.push(63);
+    pct2019.push(66);
+    pct2018.push(64);
+    pct2017.push(60);
+  
+    pct2020.push(65);
+    pct2019.push(68);
+    pct2018.push(68);
+    pct2017.push(65);
+  
+    pct2020.push(69);
+    pct2019.push(70);
+    pct2018.push(69);
+    pct2017.push(64);
+  
+    pct2020.push(98);
+    pct2019.push(99);
+    pct2018.push(28);
+    pct2017.push(14);
+  
+    pct2020.push(3);
+    pct2019.push(3);
+    pct2018.push(3);
+    pct2017.push(3);
+  
+    pct2020.push(2);
+    pct2019.push(3);
+    pct2018.push(3);
+    pct2017.push(3);
+  
+    pct2020.push(60);
+    pct2019.push(60);
+    pct2018.push(58);
+    pct2017.push(48);
+  
 
 console.log(t2020);
 console.log(t2019);
@@ -543,26 +787,73 @@ console.log(t2017);
     zmax: 1300
   }];
 
-var layout2020 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
-                width: 1000,
-                height:600,
+  var pctdata2020 = [{
+    type: "choroplethmapbox", locations: acronyms, z: pct2020,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 0,
+    zmax: 100
+  }];
+  var pctdata2019 = [{
+    type: "choroplethmapbox", locations: acronyms, z: pct2019,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 0,
+    zmax: 100
+  }];
+  var pctdata2018 = [{
+    type: "choroplethmapbox", locations: acronyms, z: pct2018,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 0,
+    zmax: 100
+  }];
+  var pctdata2017 = [{
+    type: "choroplethmapbox", locations: acronyms, z: pct2017,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 0,
+    zmax: 100
+  }];
+
+var layout2020 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+                width: 700,
+                height:400,
                 title: "2020 Scores",
                 margin: {t: 30, b: 50}};
-var layout2019 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
-                              width: 1000,
-                              height:600,
+var layout2019 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+                              width: 700,
+                              height:400,
                               title: "2019 Scores",
                               margin: {t: 30, b: 50}};
-var layout2018 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
-                                            width: 1000,
-                                            height:600,
+var layout2018 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+                                            width: 700,
+                                            height:400,
                                             title: "2018 Scores",
                                             margin: {t: 30, b: 50}};
-var layout2017 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
-                                                          width: 1000,
-                                                          height:600,
+var layout2017 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+                                                          width: 700,
+                                                          height:400,
                                                           title: "2017 Scores",
                                                           margin: {t: 30, b: 50}};
+
+
+var pctlayout2020 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+width: 700,
+height:400,
+title: "2020 Percentages",
+margin: {t: 30, b: 50}};
+var pctlayout2019 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+width: 700,
+height:400,
+title: "2019 Percentages",
+margin: {t: 30, b: 50}};
+var pctlayout2018 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+width: 700,
+height:400,
+title: "2018 Percentages",
+margin: {t: 30, b: 50}};
+var pctlayout2017 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 1.5},
+width: 700,
+height:400,
+title: "2017 Percentages",
+margin: {t: 30, b: 50}};
 
   var config = {mapboxAccessToken: "pk.eyJ1IjoibW9ob3NhbWkiLCJhIjoiY2xiMmJpc3pjMDJzNzN2cWUwZWI2cmlpYiJ9.Upwk4JeU3_HlH_5Sy4nVhA"};
 
@@ -570,6 +861,11 @@ var layout2017 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
   Plotly.newPlot('USmap2019', data2019, layout2019, config);
   Plotly.newPlot('USmap2018', data2018, layout2018, config);
   Plotly.newPlot('USmap2017', data2017, layout2017, config);
+  Plotly.newPlot('pctmap2020', pctdata2020, pctlayout2020, config);
+  Plotly.newPlot('pctmap2019', pctdata2019, pctlayout2019, config);
+  Plotly.newPlot('pctmap2018', pctdata2018, pctlayout2018, config);
+  Plotly.newPlot('pctmap2017', pctdata2017, pctlayout2017, config);
+
 
   </script>
 
