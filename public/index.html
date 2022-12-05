@@ -181,34 +181,403 @@
         <th>Average National Reading Score</th>
       </tr>
     </table>
-    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2020"></div>
+    </div>
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2019"></div>
+    </div>
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2018"></div>
+    </div>
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2017"></div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="false"></span>
+  </button>
+</div>
 
   <script>
+
   let acronyms = [];
   let t2020 = [];
-  for(let state in statesdata){
-    acronyms.push(state["acronym"]);
-    t2020.push(state["2020total"]);
-  };
+  let t2019 = [];
+  let t2018 = [];
+  let t2017 = [];
+  
+    acronyms.push("AL");
+    t2020.push(1127);
+    t2019.push(1143);
+    t2018.push(1166);
+    t2017.push(1165);
+  
+    acronyms.push("AK");
+    t2020.push(1098);
+    t2019.push(1097);
+    t2018.push(1106);
+    t2017.push(1080);
+  
+    acronyms.push("AZ");
+    t2020.push(1139);
+    t2019.push(1134);
+    t2018.push(1149);
+    t2017.push(1116);
+  
+    acronyms.push("AR");
+    t2020.push(1157);
+    t2019.push(1141);
+    t2018.push(1169);
+    t2017.push(1208);
+  
+    acronyms.push("CA");
+    t2020.push(1049);
+    t2019.push(1065);
+    t2018.push(1076);
+    t2017.push(1055);
+  
+    acronyms.push("CO");
+    t2020.push(1012);
+    t2019.push(1024);
+    t2018.push(1025);
+    t2017.push(1201);
+  
+    acronyms.push("CT");
+    t2020.push(1039);
+    t2019.push(1046);
+    t2018.push(1053);
+    t2017.push(1041);
+  
+    acronyms.push("DE");
+    t2020.push(978);
+    t2019.push(985);
+    t2018.push(998);
+    t2017.push(996);
+  
+    acronyms.push("FL");
+    t2020.push(992);
+    t2019.push(999);
+    t2018.push(1014);
+    t2017.push(1017);
+  
+    acronyms.push("GA");
+    t2020.push(1053);
+    t2019.push(1058);
+    t2018.push(1064);
+    t2017.push(1050);
+  
+    acronyms.push("HI");
+    t2020.push(1095);
+    t2019.push(1100);
+    t2018.push(1099);
+    t2017.push(1085);
+  
+    acronyms.push("ID");
+    t2020.push(984);
+    t2019.push(993);
+    t2018.push(1001);
+    t2017.push(1005);
+  
+    acronyms.push("IL");
+    t2020.push(1007);
+    t2019.push(1013);
+    t2018.push(1019);
+    t2017.push(1115);
+  
+    acronyms.push("IN");
+    t2020.push(1074);
+    t2019.push(1080);
+    t2018.push(1086);
+    t2017.push(1074);
+  
+    acronyms.push("IA");
+    t2020.push(1220);
+    t2019.push(1244);
+    t2018.push(1265);
+    t2017.push(1275);
+  
+    acronyms.push("KS");
+    t2020.push(1237);
+    t2019.push(1241);
+    t2018.push(1265);
+    t2017.push(1260);
+  
+    acronyms.push("KY");
+    t2020.push(1207);
+    t2019.push(1232);
+    t2018.push(1248);
+    t2017.push(1247);
+  
+    acronyms.push("LA");
+    t2020.push(1170);
+    t2019.push(1200);
+    t2018.push(1210);
+    t2017.push(1198);
+  
+    acronyms.push("ME");
+    t2020.push(995);
+    t2019.push(1013);
+    t2018.push(1013);
+    t2017.push(1012);
+  
+    acronyms.push("MD");
+    t2020.push(1029);
+    t2019.push(1058);
+    t2018.push(1080);
+    t2017.push(1060);
+  
+    acronyms.push("MA");
+    t2020.push(1119);
+    t2019.push(1120);
+    t2018.push(1125);
+    t2017.push(1107);
+  
+    acronyms.push("MI");
+    t2020.push(998);
+    t2019.push(1003);
+    t2018.push(1011);
+    t2017.push(1005);
+  
+    acronyms.push("MN");
+    t2020.push(1257);
+    t2019.push(1284);
+    t2018.push(1298);
+    t2017.push(1295);
+  
+    acronyms.push("MS");
+    t2020.push(1203);
+    t2019.push(1237);
+    t2018.push(1236);
+    t2017.push(1242);
+  
+    acronyms.push("MO");
+    t2020.push(1212);
+    t2019.push(1236);
+    t2018.push(1262);
+    t2017.push(1271);
+  
+    acronyms.push("MT");
+    t2020.push(1185);
+    t2019.push(1199);
+    t2018.push(1198);
+    t2017.push(1196);
+  
+    acronyms.push("NE");
+    t2020.push(1229);
+    t2019.push(1260);
+    t2018.push(1252);
+    t2017.push(1253);
+  
+    acronyms.push("NV");
+    t2020.push(1150);
+    t2019.push(1156);
+    t2018.push(1140);
+    t2017.push(1116);
+  
+    acronyms.push("NH");
+    t2020.push(1055);
+    t2019.push(1059);
+    t2018.push(1063);
+    t2017.push(1052);
+  
+    acronyms.push("NJ");
+    t2020.push(1081);
+    t2019.push(1090);
+    t2018.push(1094);
+    t2017.push(1056);
+  
+    acronyms.push("NM");
+    t2020.push(1055);
+    t2019.push(1073);
+    t2018.push(1093);
+    t2017.push(1138);
+  
+    acronyms.push("NY");
+    t2020.push(1058);
+    t2019.push(1064);
+    t2018.push(1068);
+    t2017.push(1052);
+  
+    acronyms.push("NC");
+    t2020.push(1096);
+    t2019.push(1100);
+    t2018.push(1098);
+    t2017.push(1081);
+  
+    acronyms.push("ND");
+    t2020.push(1231);
+    t2019.push(1263);
+    t2018.push(1283);
+    t2017.push(1256);
+  
+    acronyms.push("OH");
+    t2020.push(1070);
+    t2019.push(1097);
+    t2018.push(1099);
+    t2017.push(1149);
+  
+    acronyms.push("OK");
+    t2020.push(971);
+    t2019.push(963);
+    t2018.push(1062);
+    t2017.push(1047);
+  
+    acronyms.push("OR");
+    t2020.push(1104);
+    t2019.push(1112);
+    t2018.push(1117);
+    t2017.push(1108);
+  
+    acronyms.push("PA");
+    t2020.push(1078);
+    t2019.push(1082);
+    t2018.push(1086);
+    t2017.push(1071);
+  
+    acronyms.push("RI");
+    t2020.push(990);
+    t2019.push(995);
+    t2018.push(1018);
+    t2017.push(1062);
+  
+    acronyms.push("SC");
+    t2020.push(1026);
+    t2019.push(1030);
+    t2018.push(1070);
+    t2017.push(1064);
+  
+    acronyms.push("SD");
+    t2020.push(1218);
+    t2019.push(1268);
+    t2018.push(1241);
+    t2017.push(1216);
+  
+    acronyms.push("TN");
+    t2020.push(1186);
+    t2019.push(1220);
+    t2018.push(1231);
+    t2017.push(1228);
+  
+    acronyms.push("TX");
+    t2020.push(1010);
+    t2019.push(1022);
+    t2018.push(1032);
+    t2017.push(1020);
+  
+    acronyms.push("UT");
+    t2020.push(1204);
+    t2019.push(1230);
+    t2018.push(1230);
+    t2017.push(1238);
+  
+    acronyms.push("VT");
+    t2020.push(1103);
+    t2019.push(1106);
+    t2018.push(1120);
+    t2017.push(1114);
+  
+    acronyms.push("VA");
+    t2020.push(1116);
+    t2019.push(1119);
+    t2018.push(1117);
+    t2017.push(1102);
+  
+    acronyms.push("WA");
+    t2020.push(1073);
+    t2019.push(1074);
+    t2018.push(1081);
+    t2017.push(1075);
+  
+    acronyms.push("WV");
+    t2020.push(936);
+    t2019.push(943);
+    t2018.push(999);
+    t2017.push(1086);
+  
+    acronyms.push("WI");
+    t2020.push(1243);
+    t2019.push(1283);
+    t2018.push(1294);
+    t2017.push(1291);
+  
+    acronyms.push("WY");
+    t2020.push(1220);
+    t2019.push(1238);
+    t2018.push(1257);
+    t2017.push(1230);
+  
 
+console.log(t2020);
+console.log(t2019);
+console.log(t2018);
+console.log(t2017);
 
-  var data = [{
+  var data2020 = [{
     type: "choroplethmapbox", locations: acronyms, z: t2020,
-    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
+  }];
+  var data2019 = [{
+    type: "choroplethmapbox", locations: acronyms, z: t2019,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
+  }];
+  var data2018 = [{
+    type: "choroplethmapbox", locations: acronyms, z: t2018,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
+  }];
+  var data2017 = [{
+    type: "choroplethmapbox", locations: acronyms, z: t2017,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
   }];
 
-  var layout = {mapbox: {center: {lon: -110, lat: 50}, zoom: .8},
-                width: 600, height:400};
+var layout2020 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                width: 1000,
+                height:600,
+                title: "2020 Scores",
+                margin: {t: 30, b: 50}};
+var layout2019 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                              width: 1000,
+                              height:600,
+                              title: "2019 Scores",
+                              margin: {t: 30, b: 50}};
+var layout2018 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                                            width: 1000,
+                                            height:600,
+                                            title: "2018 Scores",
+                                            margin: {t: 30, b: 50}};
+var layout2017 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                                                          width: 1000,
+                                                          height:600,
+                                                          title: "2017 Scores",
+                                                          margin: {t: 30, b: 50}};
 
   var config = {mapboxAccessToken: "pk.eyJ1IjoibW9ob3NhbWkiLCJhIjoiY2xiMmJpc3pjMDJzNzN2cWUwZWI2cmlpYiJ9.Upwk4JeU3_HlH_5Sy4nVhA"};
 
-  Plotly.newPlot('myDiv', data, layout, config);
+  Plotly.newPlot('USmap2020', data2020, layout2020, config);
+  Plotly.newPlot('USmap2019', data2019, layout2019, config);
+  Plotly.newPlot('USmap2018', data2018, layout2018, config);
+  Plotly.newPlot('USmap2017', data2017, layout2017, config);
 
   </script>
   </section>
 
-  <a href="./about.html">About Our Project!</a>
-
+  <footer>
+   <a href="https://nces.ed.gov/programs/digest/d20/tables/dt20_226.40.asp">SAT Data Set from the National Center for Education Statistics</a> demonstrates that over the last four years,
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 

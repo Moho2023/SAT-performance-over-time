@@ -7,6 +7,7 @@ const ejs = require('ejs');
 let about_template = fs.readFileSync('views/about.ejs', 'utf8');
 let statesdata = JSON.parse(fs.readFileSync('../data/statescores.json', 'utf8'));
 let index_template = fs.readFileSync('views/index.ejs', 'utf8');
+let state_template = fs.readFileSync('views/state.ejs', 'utf8');
 /*
   1) Generate a web page for each character
   2) Keep track of the link for index.html
@@ -41,6 +42,15 @@ let index_html = ejs.render(index_template, {
   filename: __dirname + '/views/index.ejs',
   statesdata: statesdata
 });
+
+for(let state in statesdata){
+  let state_html = ejs.render(state_template, {
+    filename: __dirname + '/views/state.ejs',
+    statesdata: statesdata,
+    thisstate: state
+  })
+  fs.writeFileSync('../public/' + statesdata[state].statelink, state_html, 'utf8');
+}
 
 fs.writeFileSync('../public/about.html', about_html, 'utf8');
 fs.writeFileSync('../public/index.html', index_html, 'utf8');

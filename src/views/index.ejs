@@ -21,7 +21,6 @@
   <header>
     <h1>Average Standardized Testing Scores</h1>
   </header>
-  <section id="charcter-table">
     <table>
       <tr>
         <th>Year</th>
@@ -55,35 +54,106 @@
         <th>Average National Reading Score</th>
       </tr>
     </table>
-    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2020"></div>
+    </div>
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2019"></div>
+    </div>
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2018"></div>
+    </div>
+    <div class="carousel-item active">
+      <div class ="d-flex justify-content-center" id="USmap2017"></div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="false"></span>
+  </button>
+</div>
 
   <script>
+
   let acronyms = [];
   let t2020 = [];
-  for(let state in statesdata){
-    acronyms.push(state["acronym"]);
-    t2020.push(state["2020total"]);
-  };
+  let t2019 = [];
+  let t2018 = [];
+  let t2017 = [];
+  <% for(let state in statesdata){ %>
+    acronyms.push("<%=statesdata[state].acronym%>");
+    t2020.push(<%=statesdata[state].total2020%>);
+    t2019.push(<%=statesdata[state].total2019%>);
+    t2018.push(<%=statesdata[state].total2018%>);
+    t2017.push(<%=statesdata[state].total2017%>);
+  <% }; %>
 
+console.log(t2020);
+console.log(t2019);
+console.log(t2018);
+console.log(t2017);
 
-  var data = [{
+  var data2020 = [{
     type: "choroplethmapbox", locations: acronyms, z: t2020,
-    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
+  }];
+  var data2019 = [{
+    type: "choroplethmapbox", locations: acronyms, z: t2019,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
+  }];
+  var data2018 = [{
+    type: "choroplethmapbox", locations: acronyms, z: t2018,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
+  }];
+  var data2017 = [{
+    type: "choroplethmapbox", locations: acronyms, z: t2017,
+    geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json",
+    zmin: 900,
+    zmax: 1300
   }];
 
-  var layout = {mapbox: {center: {lon: -110, lat: 50}, zoom: .8},
-                width: 600, height:400};
+var layout2020 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                width: 1000,
+                height:600,
+                title: "2020 Scores",
+                margin: {t: 30, b: 50}};
+var layout2019 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                              width: 1000,
+                              height:600,
+                              title: "2019 Scores",
+                              margin: {t: 30, b: 50}};
+var layout2018 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                                            width: 1000,
+                                            height:600,
+                                            title: "2018 Scores",
+                                            margin: {t: 30, b: 50}};
+var layout2017 = {mapbox: {center: {lon: -110, lat: 50}, zoom: 2},
+                                                          width: 1000,
+                                                          height:600,
+                                                          title: "2017 Scores",
+                                                          margin: {t: 30, b: 50}};
 
   var config = {mapboxAccessToken: "pk.eyJ1IjoibW9ob3NhbWkiLCJhIjoiY2xiMmJpc3pjMDJzNzN2cWUwZWI2cmlpYiJ9.Upwk4JeU3_HlH_5Sy4nVhA"};
 
-  Plotly.newPlot('myDiv', data, layout, config);
+  Plotly.newPlot('USmap2020', data2020, layout2020, config);
+  Plotly.newPlot('USmap2019', data2019, layout2019, config);
+  Plotly.newPlot('USmap2018', data2018, layout2018, config);
+  Plotly.newPlot('USmap2017', data2017, layout2017, config);
 
   </script>
-  </section>
 
-  <a href="./about.html">About Our Project!</a>
-
-
+  <%- include('global/footer') %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </body>

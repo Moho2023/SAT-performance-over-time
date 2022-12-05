@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Average Standardized Testing</title>
+  <meta name="author" content="You">
+  <meta name="description">
+  <meta content="text/html" http-equiv="Content-type" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <%- include('global/navbar', {statesdata: statesdata}) %>
+
+<center><h1><%=thisstate%></h1></center>
+
+<div id="statetotals"></div>
+<div id="statesections"></div>
+<div id="statepercents"></div>
+
+<script>
+let totalsarray = [<%=statesdata[thisstate].total2017%>,<%=statesdata[thisstate].total2018%>,<%=statesdata[thisstate].total2019%>,<%=statesdata[thisstate].total2020%>];
+let math = [<%=statesdata[thisstate].m2017%>,<%=statesdata[thisstate].m2018%>,<%=statesdata[thisstate].m2019%>,<%=statesdata[thisstate].m2020%>];
+let reading = [<%=statesdata[thisstate].r2017%>,<%=statesdata[thisstate].r2018%>,<%=statesdata[thisstate].r2019%>,<%=statesdata[thisstate].r2020%>];
+let pctarray = [<%=statesdata[thisstate].pct2017%>,<%=statesdata[thisstate].pct2018%>,<%=statesdata[thisstate].pct2019%>,<%=statesdata[thisstate].pct2020%>];
+
+
+var totals = {
+x: ['2017', '2018', '2019', '2020'],
+y: totalsarray,
+mode: 'lines+markers',
+name: 'Average Total'
+};
+
+var m = {
+x: [2017, 2018, 2019, 2020],
+y: math,
+mode: 'lines+markers',
+name: 'Average Math'
+};
+
+var r = {
+x: [2017, 2018, 2019, 2020],
+y: reading,
+mode: 'lines+markers',
+name: 'Average EBRW'
+};
+
+var pct = {
+x: [2017, 2018, 2019, 2020],
+y: pctarray,
+mode: 'lines+markers',
+name: 'Percent Taking SAT'
+};
+
+var datatotals = totals;
+
+var layouttotals = {
+title:'Average Total Score'
+};
+
+Plotly.newPlot('statetotals', datatotals, layouttotals);
+</script>
+
+
+  <%- include('global/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
