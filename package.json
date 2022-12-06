@@ -12,9 +12,11 @@
   "scripts": {
     "prebuild": "node prebuild.js",
     "build": "cd src && node siteGenerator.js",
+    "postbuild": "open http://localhost:3000 && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postpublish": "open https://moho2023.github.io/sat-scores/public/index.html"
   },
-  "author": "",
+  "author": "Mohammed Sami and Ryman Smith",
   "license": "ISC"
 }

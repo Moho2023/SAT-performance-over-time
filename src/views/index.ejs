@@ -24,6 +24,8 @@
     <h3>Average Standardized Testing Scores Map of the United States</h3>
   </center>
 
+  <center><p>the next and previous buttons for the map carousel slides are invisible, so just click on the edges of the screen. You might need to click a couple of times before it stops glitching</p></center>
+
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -191,7 +193,13 @@ margin: {t: 30, b: 50}};
   </script>
   <p>This data is very interesting. The main thing that we found interesting is that there is often an inverse corelation between
     the percentage of students taking the SAT and the state's SAT scores. This is most likely because in states with lower participation,
-  the students taking the SAT are likely more prepared and have a better quality of education than thos who elect not to take the SAT. It also may point to their intitiative and more awareness and agency in the college process</p> 
+  the students taking the SAT are likely more prepared and have a better quality of education than those who elect not to take the SAT. It also may point to their intitiative and more awareness and agency in the college process. While we do see a correlation between SAT participation and scores, there are also some states that aren't as well represented in the correlation.</p>
+
+  <h6>Some pitfalls:</h6>
+  <ul>
+    <li>While we would like to say that the correlation exists across all students, we don't know what grades in particular are being represented in the dataset</li>
+    <li>This data isn't saying that the states where SAT scores are lower are less prepared academically, but rather that the students that take the SAT there are less prepared for it as a whole. In states where SAT participation is high, even less prepared students are taking the test, potentially bringing down the whole state's average. In those same states, the average ACT scores there may be higher as a result of only more prepared students taking the ACT there.</li>
+  </ul>
 
   <%- include('global/footer') %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

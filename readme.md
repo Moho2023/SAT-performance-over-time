@@ -2,9 +2,13 @@
 
 ## SAT data from: <https://nces.ed.gov/programs/digest/d20/tables/dt20_226.40.asp>
 
-## AlbersUSA Map Projection <https://github.com/hrbrmstr/albersusa>
+## Plotly Graphing Library <https://plotly.com/javascript/>
 
 ## `npm install fs`
+
+## `npm install ejs`
+
+## `npm install express`
 
 ## `cd data`
 
@@ -12,8 +16,6 @@
 
 ## `cd ..`
 
-## `cd src`
-
-## `node siteGenerator.js`
+## `npm run build`
 
 ## `npm start`

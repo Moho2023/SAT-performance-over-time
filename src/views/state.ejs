@@ -87,6 +87,31 @@ Plotly.newPlot('state_graph2', data2);
 
 </script>
 
+<center>
+<% let statespositions = []; %>
+<% for(let state in statesdata){ %>
+<% statespositions.push(state); %>
+<% } %>
+<% if(thisstate != "Alabama"){%>
+<% let prevStateIndex = statespositions.indexOf(thisstate) - 1;%>
+<% let prevState = statespositions[prevStateIndex]; %>
+<% let prevStateLink = statesdata[prevState].statelink %>
+<a href=<%=prevStateLink%> >Previous State (<%=prevState%>)</a>
+<% } %>
+
+<% if(thisstate != "United States"){%>
+<% let nextStateIndex = statespositions.indexOf(thisstate) + 1;%>
+<% let nextState = statespositions[nextStateIndex]; %>
+<% let nextStateLink = statesdata[nextState].statelink %>
+<a href=<%=nextStateLink%>>Next State (<%=nextState%>)</a>
+<% } %>
+</center>
+
+
+
+
+
+
 
   <%- include('global/footer') %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

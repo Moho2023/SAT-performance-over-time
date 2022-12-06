@@ -135,10 +135,12 @@
   </div>
 </nav>
 
+    <center><h1>Average SAT Scores and Percentages of SAT Test Takers by State</h1></center>
+
     <header>
       <h1>About our Project</h1>
       <section id="vocab">
-        <p>Our project will focus on demonstrating the distributio of SAT scores by state across the United Sates</p>
+        <p>Our project will focus on demonstrating the distributio of SAT scores by state across the United Sates. We want to focus on this to see if there are any trends for standardized test scores coast to coast and what the correlations may be. Maybe there will be a trend over time of increasing or decreasing SAT participation. Perhaps different geographic locations may have higher or lower scores, or perhaps timing too will impact SAT scores.</p>
         <h2>Some terms to know:</h2>
         <ul class="list-group">
           <li class="list-group-item">SAT: The Scholastic Aptitude Test, which is scored out of 1600, measures students' proficiency in high school level mathematics and reading/writing.
@@ -157,13 +159,28 @@
         <<img class="img-thumbnail" src="./Ryman-Micro.jpg" width="300"/>
         <p>These prototypes were both very basic. We kept the idea of using a map to display the scores.
         It is important to note that these layouts were developed for our prevous idea, but they still work well.</p>
+        <h4>Wireframe evaluation:</h4>
+        <ul>
+          <li>Understandability: Ryman's design is pretty straightforward for users to understand because the map and the corresponding breakdown will be right next to each other</li>
+          <li>Achievability: There are a couple of great graphing libraries out there that can help imprement the maps</li>
+          <li>Signifiers: There will be plenty of well defined buttons</li>
+          <li>Simplicity: It's a little confusing how a US map can serve as both a micro and macro view, but overall not too much clutter</li>
+          <li>Ease: Easy to navigate</li>
+        </ul>
 
         <h3>Mohammed's Macro Prototype:</h3>
         <img class="img-thumbnail" src="./moho-macro.jpg" width="300"/>
         <h3>Mohammed's Micro Prototype:</h3>
         <img class="img-thumbnail" src="./moho-macro.jpg" width="300"/>
         <p>Initially, we were working on a data set of broadband access in US counties and SAT scores so my micro page view included a diagram of all the counties per state, their broadband high speed internet access, and on the macro page we could have both broadband access and average SAT scores in those states and counties. I have both micro and macro views here</p>
-
+        <h4>Wireframe evaluation:</h4>
+        <ul>
+          <li>Understandability: My design is pretty straightforward for users to understand because it's clear how the US is a macro view, and the states with counties is a more micro, specific view</li>
+          <li>Achievability: We can use plotly for the US map with data per state, but there might not be enough data to do county by county</li>
+          <li>Signifiers: If we can get it to work, being able to click the state to get to a micro view would be very intuitive</li>
+          <li>Simplicity: Really only two forms of graphs in this prototype so not difficult to grasp for user</li>
+          <li>Ease: Again, the signifiers and simplicity should make things pretty easy to navigate</li>
+        </ul>
         <h3>Our final idea:</h3>
         <p>After swtiching to just SAT scores, we decided we would show the change in scores over years on the macro scale by showing side by side views of SAT participation and scores per state. On the micro scale, we wanted to show the same thing but also break down section scores in bar chart form, which makes it easier to see the progress.</p>
       </section>
